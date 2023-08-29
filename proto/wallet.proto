@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option go_package = "./walletpb";
+
+service WalletService {
+  rpc GetBalance (BalanceRequest) returns (BalanceResponse);
+}
+
+message BalanceRequest {
+  string user_id = 1;
+}
+
+message BalanceResponse {
+  double balance = 1;
+}
